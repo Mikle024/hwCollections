@@ -1,5 +1,7 @@
 package ru.netology.hwCollections.game;
 
+import java.util.Objects;
+
 public class Player {
     private int id;
     private String name;
@@ -21,5 +23,18 @@ public class Player {
 
     public int getStrength() {
         return strength;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return id == player.id && name.equals(player.name) && strength == player.strength;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, strength);
     }
 }
