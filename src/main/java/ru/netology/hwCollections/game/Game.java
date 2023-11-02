@@ -18,10 +18,6 @@ public class Game {
         return null;
     }
 
-    public ArrayList<Player> findAll() {
-        return players;
-    }
-
     public int round(String playerName1, String playerName2) {
         Player player1 = findByName(playerName1);
         Player player2 = findByName(playerName2);
@@ -38,6 +34,5 @@ public class Game {
         } else {
             return 0;
         }
-
     }
 }
